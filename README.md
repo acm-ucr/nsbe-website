@@ -16,7 +16,8 @@
 [National Society of Black Engineers Figma Design](https://www.figma.com/design/VrhcFmdaG4wtz7YvaqGkO1/Winter--26-NSBE?node-id=0-1&p=f&t=4H93n7wBEBWMBkjI-0)
 
 ## Node.js
-The 
+
+The
 National Society of Black Engineers Website runs on Node.js Version 20.10.0 and higher. Please ensure you have Node.js installed via the [official website](https://nodejs.org/en).
 
 ## Next.js
