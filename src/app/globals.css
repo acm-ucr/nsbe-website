@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-nsbe-gray-50: ##1a1a1a;
-  --color-nsbe-gray-100: ##575757;
-  --color-nsbe-yellow-100: ##d1b92e;
-  --color-nsbe-red-100: ##ef5b53;
-  --color-nsbe-green-100: ##2eb357;
+  --color-nsbe-gray-50: #1a1a1a;
+  --color-nsbe-gray-100: #575757;
+  --color-nsbe-yellow-100: #d1b92e;
+  --color-nsbe-red-100: #ef5b53;
+  --color-nsbe-green-100: #2eb357;
 }
