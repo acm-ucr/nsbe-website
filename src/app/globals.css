@@ -7,3 +7,7 @@
   --color-nsbe-red-100: #ef5b53;
   --color-nsbe-green-100: #2eb357;
 }
+
+body {
+  background-image: linear-gradient(to bottom, #1a1a1a, #575757);
+}
