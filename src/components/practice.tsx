@@ -6,10 +6,10 @@ const Example = (props: { text1: string; text2: string; text3: string }) => {
       </div>
 
       <div className="flex w-full flex-row justify-center gap-1">
-        <div className="bg-nsbe-gray-100 m-0 w-1/2 rounded-full p-5 text-center">
+        <div className="bg-nsbe-gray-100 w-1/2 rounded-full p-5 text-center">
           {props.text2}
         </div>
-        <div className="bg-nsbe-green-100 m-0 w-1/2 rounded-full p-5 text-center">
+        <div className="bg-nsbe-green-100 w-1/2 rounded-full p-5 text-center">
           {props.text2}
         </div>
       </div>
