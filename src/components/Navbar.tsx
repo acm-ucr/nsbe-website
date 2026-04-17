@@ -7,7 +7,7 @@ import Link from "next/link";
 const Navbar = () => {
   const pathname = usePathname();
 
-  const getLinkStyle = (path : string) => {
+  const getLinkStyle = (path: string) => {
     const isActive = pathname === path;
 
     return `mt-5 px-10 py-2 rounded-md text-nsbe-yellow-100 transition-colors ${
