@@ -1,11 +1,5 @@
-import Example from "@/components/practice";
+import History from "@/components/about/History";
 
-const Home = () => {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <Example text1="Change Me!" text2="Click" text3="Props" />
-    </div>
-  );
-};
-
-export default Home;
+export default function AboutPage() {
+  return <History />;
+}

@@ -14,7 +14,7 @@ const History = () => {
             HISTORY
           </h2>
 
-          <p className="text-white text-sm leading-relaxed">
+          <p className="text-sm leading-relaxed text-white">
             The UC Riverside chapter was established in the early 2000s and grew
             rapidly as more students of color entered the university and sought
             out resources to thrive academically and connect with research and
