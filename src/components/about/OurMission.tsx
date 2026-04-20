@@ -5,15 +5,15 @@ const OurMission = () => {
         OUR MISSION
       </h1>
 
-      <p className="text-nsbe-yellow-100 mb-4 max-w-3xl">
+      <p className="text-nsbe-yellow-100 max-w-4xl">
         As the organization has grown, advancing the professional prospects and
         development of Black engineers, our purpose has remained the same.
       </p>
 
-      <p className="text-nsbe-yellow-100 max-w-3xl">
+      <p className="text-nsbe-yellow-100 max-w-4xl">
         We aim "to increase the number of culturally responsible Black Engineers
         who excel academically, succeed professionally, and positively impact
-        the community."
+        the community".
       </p>
     </div>
   );
