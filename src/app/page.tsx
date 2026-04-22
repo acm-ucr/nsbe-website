@@ -1,11 +1,19 @@
-import Example from "@/components/practice";
+// import Example from "@/components/practice";
 
-const Home = () => {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <Example text1="Change Me!" text2="Click" text3="Props" />
-    </div>
-  );
-};
+// const Home = () => {
+//   return (
+//     <div className="flex h-screen w-screen items-center justify-center">
+//       <Example text1="Change Me!" text2="Click" text3="Props" />
+//     </div>
+//   );
+// };
 
-export default Home;
+// export default Home;
+
+import Landing from "@/components/home/Landing";
+
+function App() {
+  return <Landing />;
+}
+
+export default App;
