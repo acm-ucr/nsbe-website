@@ -11,15 +11,15 @@ const Navbar = () => {
   const getLinkStyle = (path: string) => {
     const isActive = pathname === path;
 
-    return `mt-5 px-8 py-2 rounded-md text-nsbe-yellow-100 transition-colors ${
+    return `mt-5 px-5 mx-4 py-2 rounded-md text-nsbe-yellow-100 transition-colors ${
       isActive
-        ? "bg-nsbe-yellow-100/20 border-3"
-        : "hover:bg-nsbe-yellow-100/20 hover:border-3 "
+        ? "bg-nsbe-yellow-100/20 border-2"
+        : "hover:bg-nsbe-yellow-100/20 hover:border-2 "
     }`;
   };
   return (
     <div className="flex flex-col">
-      <div className="bg-nsbe-gray-50 border-nsbe-yellow-100 flex h-20 w-full flex-row border-b-8">
+      <div className="bg-nsbe-gray-50 border-nsbe-yellow-100 flex h-20 w-full flex-row border-b-4">
         <Image src={NSBElogo} alt="NSBE Logo" width={60} height={15} />
         <div className="flex w-full justify-between">
           <div className="flex flex-col">
