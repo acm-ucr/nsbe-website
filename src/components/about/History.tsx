@@ -1,6 +1,6 @@
 const History = () => {
   return (
-    <div className="bg-nsbe-gray-50 flex min-h-screen items-start gap-10 px-6">
+    <div className="flex min-h-screen items-start gap-10 px-6">
       <div className="flex w-1/4 justify-center">
         <img
           src="Logo.webp"
