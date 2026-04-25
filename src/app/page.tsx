@@ -5,9 +5,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// function App() {
-//   return <Landing />;
-// }
-
-// export default App;
