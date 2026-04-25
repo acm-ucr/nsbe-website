@@ -1,11 +1,7 @@
-import Example from "@/components/practice";
+import Landing from "@/components/home/Landing";
 
 const Home = () => {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <Example text1="Change Me!" text2="Click" text3="Props" />
-    </div>
-  );
+  return <Landing />;
 };
 
 export default Home;
