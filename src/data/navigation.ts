@@ -3,7 +3,7 @@ export interface navigation {
   link: string;
 }
 const navigations: navigation[] = [
-  { name: "HOME", link: "/home" },
+  { name: "HOME", link: "/" },
   { name: "ABOUT", link: "/about" },
   { name: "BOARD", link: "/board" },
   { name: "EVENTS", link: "/events" },

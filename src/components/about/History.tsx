@@ -1,24 +1,18 @@
 import Image from "next/image";
+import Logo from "@/public/Logo.webp";
+
 const History = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center px-6">
-      <div className="flex w-full max-w-4xl items-center gap-10">
-      <div className="flex w-1/3 justify-center">
-        <Image
-          src="/Logo.webp"
-          alt="NSBE Logo"
-          width={400}
-          height={400}
-          className="w-full max-w-md rounded-md shadow-md"
-        />
-      </div>
-      <div className="flex w-2/3 justify-start">
-        <div className="bg-nsbe-gray-100/50 flex w-full flex-col items-center rounded-md border border-amber-50 p-5 shadow-md">
-          <div className="text-nsbe-yellow-100 w-full text-left text-lg font-extrabold">
+    <div className="mt-5 mb-5 flex items-center justify-center">
+      <div className="flex w-3/4 items-center gap-10">
+        <Image src={Logo} alt="NSBE Logo" className="w-full" />
+
+        <div className="bg-nsbe-gray-100/50 rounded-md border border-amber-50 p-5">
+          <div className="text-nsbe-yellow-100 mb-5 text-lg font-extrabold">
             HISTORY
           </div>
 
-          <p className="text-sm leading-relaxed text-white">
+          <p className="text-base leading-relaxed text-white">
             The UC Riverside chapter was established in the early 2000s and grew
             rapidly as more students of color entered the university and sought
             out resources to thrive academically and connect with research and
@@ -29,7 +23,6 @@ const History = () => {
           </p>
         </div>
       </div>
-    </div>
     </div>
   );
 };
