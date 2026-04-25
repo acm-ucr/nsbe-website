@@ -1,5 +1,8 @@
-const About = () => {
-  return <div>About</div>;
-};
+import History from "@/components/about/History";
 
+const About = () => {
+  return (
+    <History />
+  );
+};
 export default About;

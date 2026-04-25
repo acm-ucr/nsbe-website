@@ -1,5 +1,8 @@
 import History from "@/components/about/History";
 
-export default function AboutPage() {
-  return <History />;
-}
+const About = () => {
+  return (
+    <History />
+  );
+};
+export default About;
