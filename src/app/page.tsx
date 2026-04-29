@@ -1,7 +1,7 @@
-import Landing from "@/components/home/Landing";
+import UpcomingEvents from "@/components/events/UpcomingEvents";
 
 const Home = () => {
-  return <Landing />;
+  return <UpcomingEvents />;
 };
 
 export default Home;
