@@ -1,5 +1,12 @@
+import OurMission from "@/components/about/OurMission";
+import History from "@/components/about/History";
 const About = () => {
-  return <div>About</div>;
+  return (
+    <>
+      <OurMission />
+      <History />
+    </>
+  );
 };
 
 export default About;
