@@ -2,15 +2,18 @@ import { IconType } from "react-icons";
 import { MdEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 
-export type FooterLink = {
+interface FooterLink {
   icon: IconType;
-  href: string;
-};
+  url: string;
+}
 
-export const footerData = {
-  orgName: "UCR National Society of Black Engineers",
-  links: [
-    { icon: MdEmail, href: "mailto:nsbe@ucr.edu" },
-    { icon: FaInstagram, href: "https://www.instagram.com/nsbe_ucr/" },
-  ],
-};
+export const footerData: FooterLink[] = [
+  {
+    icon: MdEmail,
+    url: "mailto:nsbe@ucr.edu",
+  },
+  {
+    icon: FaInstagram,
+    url: "https://www.instagram.com/nsbe_ucr/",
+  },
+];
