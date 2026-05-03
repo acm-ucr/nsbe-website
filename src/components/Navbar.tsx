@@ -20,7 +20,13 @@ const Navbar = () => {
   return (
     <div className="flex flex-col">
       <div className="bg-nsbe-gray-50 border-nsbe-yellow-100 flex h-20 w-full flex-row border-b-4">
-        <Image src={NSBElogo} alt="NSBE Logo" width={60} height={15} />
+        <Image
+          src={NSBElogo}
+          alt="NSBE Logo"
+          width={60}
+          height={15}
+          className="mt-2 mr-3 mb-2 ml-3"
+        />
         <div className="flex w-full justify-between">
           <div className="flex flex-col">
             <div className="text-nsbe-yellow-100 pt-5 text-lg font-light">
