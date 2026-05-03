@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const JoinUs = () => {
   return (
-    <div className="bg-nsbe-gray-50 flex flex-col items-center justify-center px-4 py-16 text-center">
-      <div className="text-nsbe-yellow-100 mb-8 text-4xl font-black">
+    <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
+      <div className="text-nsbe-yellow-100 mb-8 text-4xl font-bold">
         JOIN US
       </div>
       <p className="text-xl text-white">
@@ -11,7 +11,7 @@ const JoinUs = () => {
         <Link
           href="https://highlanderlink.ucr.edu/organization/nsbe"
           target="_blank"
-          className="text-nsbe-yellow-100 font-bold underline decoration-2"
+          className="text-nsbe-yellow-100 font-bold underline"
         >
           Highlander Link
         </Link>{" "}
