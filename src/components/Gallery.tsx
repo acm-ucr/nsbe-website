@@ -11,10 +11,10 @@ type GalleryProps = {
 
 const Gallery = ({ images }: GalleryProps) => {
   return (
-    <div className="flex w-full items-center justify-center px-4 py-10">
+    <div className="flex w-full items-center justify-center py-10">
       <div className="flex w-full flex-row gap-3">
         {images.map(({ image, alt }, index) => (
-          <div key={index} className="border-nsbe-yellow-100 flex-1 border-3">
+          <div key={index} className="border-nsbe-yellow-100 flex-1 border-2">
             <Image
               src={image}
               alt={alt}
