@@ -12,10 +12,8 @@ const Landing = () => {
           className="h-full w-full object-cover brightness-50"
         />
       </div>
-      <div className="text-nsbe-yellow-100 relative z-10 px-4 text-center">
-        <div className="text-nsbe-yellow-100 z-10 text-6xl font-extrabold">
-          ABOUT US
-        </div>
+      <div className="text-nsbe-yellow-100 relative z-10 px-4 text-center text-6xl font-extrabold">
+        ABOUT US
       </div>
     </div>
   );
