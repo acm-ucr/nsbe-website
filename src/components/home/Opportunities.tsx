@@ -2,7 +2,7 @@ import React from 'react';
 
 const Opportunities = () => {
   return (
-    <div className="py-20 px-6">
+    <div className="py-10 px-6 pb-30">
       <div className="max-w-6xl mx-auto">
         <p className="text-nsbe-yellow-100 text-4xl font-bold text-right">
           OPPORTUNITIES
