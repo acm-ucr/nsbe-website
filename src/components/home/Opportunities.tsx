@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 const Opportunities = () => {
   return (
@@ -22,12 +22,12 @@ const Opportunities = () => {
                 the southwest? The Region VI Fall Conference is for you!
               </p>
               <div className="self-start">
-                <a
+                <Link
                   href="#"
                   className="inline-block rounded-lg border-2 border-white px-8 py-2 font-bold text-white hover:bg-white hover:text-black"
                 >
                   LEARN MORE
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -47,12 +47,12 @@ const Opportunities = () => {
                 engineering and financial fields!
               </p>
               <div className="self-end">
-                <a
+                <Link
                   href="#"
                   className="inline-block rounded-lg border-2 border-white px-8 py-2 font-extrabold text-white hover:bg-white hover:text-black"
                 >
                   LEARN MORE
-                </a>
+                </Link>
               </div>
             </div>
           </div>
