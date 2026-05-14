@@ -47,7 +47,7 @@ const EventCard = ({
 
       <div className="bg-nsbe-gray-100 my-3 w-px" />
 
-      <div className="flex max-w-[240px] flex-col justify-between px-5 py-4">
+      <div className="flex w-1/2 flex-col justify-between px-5 py-4">
         <p className="line-clamp-3 text-xs leading-relaxed text-white">
           {description}
         </p>
@@ -82,11 +82,11 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <section className="flex flex-col gap-4 p-6">
+    <div className="flex flex-col gap-4 p-6">
       {events.map((event, index) => (
         <EventCard key={index} {...event} />
       ))}
-    </section>
+    </div>
   );
 };
 
