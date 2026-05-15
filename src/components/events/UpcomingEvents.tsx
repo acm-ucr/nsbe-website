@@ -23,23 +23,21 @@ const EventCard = ({
   rsvpLink,
 }: EventCardProps) => {
   return (
-    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex items-stretch overflow-hidden rounded-md border">
+    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-10/12 overflow-hidden rounded-md border text-white">
       <div className="border-nsbe-gray-50 flex items-center justify-center border-r px-3 py-2">
         <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-5">
-          <span className="text-xs tracking-widest text-white uppercase">
-            {day}
-          </span>
-          <span className="mt-1 text-4xl leading-none text-white">{date}</span>
+          <span className="text-xs tracking-widest">{day}</span>
+          <span className="mt-1 text-4xl">{date}</span>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
-        <p className="text tracking-wide text-white uppercase">{title}</p>
-        <p className="flex items-center gap-1 text-xs text-white">
+        <p className="text-base tracking-wide">{title}</p>
+        <p className="flex items-center gap-1 text-xs">
           <BsClock className="shrink-0" />
           {startTime} - {endTime}
         </p>
-        <p className="flex items-center gap-1 text-xs text-white">
+        <p className="flex items-center gap-1 text-xs">
           <MdLocationOn className="shrink-0" />
           {location}
         </p>
@@ -48,15 +46,13 @@ const EventCard = ({
       <div className="bg-nsbe-gray-100 my-3 w-px" />
 
       <div className="flex w-1/2 flex-col justify-between px-5 py-4">
-        <p className="line-clamp-3 text-xs leading-relaxed text-white">
-          {description}
-        </p>
+        <p className="text-sm leading-relaxed">{description}</p>
         <div className="mt-3 flex justify-end">
           <a
             href={rsvpLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded border border-white px-6 py-1 text-xs text-white"
+            className="rounded border border-white px-6 py-1 text-xs"
           >
             RSVP
           </a>
@@ -82,7 +78,7 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-4 p-6">
+    <div className="flex flex-col items-center gap-4 p-6">
       {events.map((event, index) => (
         <EventCard key={index} {...event} />
       ))}
