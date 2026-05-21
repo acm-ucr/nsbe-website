@@ -20,10 +20,10 @@ const Opportunities = () => {
                 the chance to meet students and recruiters from schools across
                 the southwest? The Region VI Fall Conference is for you!
               </p>
-              <div className="self-start">
+              <div>
                 <Link
                   href="#"
-                  className="inline-block rounded-lg border-2 border-white px-6 py-2 font-bold text-white transition-colors hover:bg-white hover:text-black md:px-8"
+                  className="inline-block rounded-lg border-2 border-white px-6 py-2 font-bold text-white hover:bg-white hover:text-black md:px-8"
                 >
                   LEARN MORE
                 </Link>
@@ -44,10 +44,10 @@ const Opportunities = () => {
                 connect with ambitious students and professionals in various
                 engineering and financial fields!
               </p>
-              <div className="self-start md:self-end">
+              <div className="md:self-end">
                 <Link
                   href="#"
-                  className="inline-block rounded-lg border-2 border-white px-6 py-2 font-extrabold text-white transition-colors hover:bg-white hover:text-black md:px-8"
+                  className="inline-block rounded-lg border-2 border-white px-6 py-2 font-extrabold text-white hover:bg-white hover:text-black md:px-8"
                 >
                   LEARN MORE
                 </Link>
