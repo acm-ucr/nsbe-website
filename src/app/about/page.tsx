@@ -2,16 +2,16 @@ import OurMission from "@/components/about/OurMission";
 import History from "@/components/about/History";
 import JoinUs from "@/components/about/JoinUs";
 import Landing from "@/components/about/Landing";
-import Gallery from "@/components/Gallery";
-import aboutGallery from "@/data/aboutGallery";
+import Photos from "@/components/about/Photos";
+
 const About = () => {
   return (
     <>
       <Landing />
-      <Gallery images={aboutGallery} />
       <OurMission />
       <History />
       <JoinUs />
+      <Photos />
     </>
   );
 };

@@ -1,5 +1,8 @@
+import Gallery from "@/components/Gallery";
+import gallery from "@/data/gallery";
+
 const Photos = () => {
-  return <div>Photos</div>;
+  return <Gallery images={gallery} />;
 };
 
 export default Photos;
