@@ -22,7 +22,7 @@ const NotFound = () => {
 
       <Link
         href="/"
-        className="border-nsbe-yellow-100 text-nsbe-yellow-100 mt-16 rounded-xl border-3 px-5 py-3 text-xl transition-opacity hover:opacity-60"
+        className="border-nsbe-yellow-100 text-nsbe-yellow-100 mt-16 mb-10 rounded-xl border-3 px-5 py-3 text-xl transition-opacity hover:opacity-60"
       >
         RETURN HOME
       </Link>
