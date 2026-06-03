@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-nsbe-yellow-100 bg-nsbe-gray-50 flex items-center justify-between border-t-4 px-8 py-8">
+    <footer className="border-nsbe-yellow-100 bg-nsbe-gray-50 flex flex-col items-center gap-4 border-t-4 px-8 py-6 text-center md:flex-row md:justify-between md:py-8 md:text-left">
       <div className="text-nsbe-yellow-100 font-medium">
         UCR National Society of Black Engineers
       </div>
