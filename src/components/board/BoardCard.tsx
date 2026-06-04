@@ -15,16 +15,18 @@ const BoardCard = ({ image, name, position, linkedin }: BoardCardProps) => {
       <Image
         src={image}
         alt={name}
-        className="border-nsbe-yellow-100 aspect-square w-[20vw] rounded-full border-3 object-cover"
+        className="border-nsbe-yellow-100 aspect-square w-3/5 rounded-full border-4 object-cover"
       />
 
       <div className="flex flex-col items-center gap-0.5 text-center">
-        <p className="text-nsbe-yellow-100 text-2xl font-extrabold">{name}</p>
-        <p className="text-xl text-white">{position}</p>
+        <p className="text-nsbe-yellow-100 text-lg font-extrabold md:text-xl lg:text-2xl">
+          {name}
+        </p>
+        <p className="text-sm text-white md:text-lg lg:text-xl">{position}</p>
       </div>
 
       <Link href={linkedin} target="_blank" rel="noopener noreferrer">
-        <FaLinkedin className="text-nsbe-yellow-100 text-4xl hover:scale-105 hover:opacity-75" />
+        <FaLinkedin className="text-nsbe-yellow-100 text-4xl transition-all duration-100 hover:scale-105 hover:opacity-75" />
       </Link>
     </div>
   );
