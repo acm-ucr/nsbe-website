@@ -1,7 +1,11 @@
 import UpcomingEvents from "@/components/events/UpcomingEvents";
 
 const Events = () => {
-  return <UpcomingEvents />;
+  return (
+    <>
+      <UpcomingEvents />
+    </>
+  );
 };
 
 export default Events;

@@ -10,6 +10,7 @@ interface EventCardProps {
   endTime: string;
   location: string;
   description: string;
+  rsvpLink: string;
 }
 
 const EventCard = ({
@@ -20,6 +21,7 @@ const EventCard = ({
   endTime,
   location,
   description,
+  rsvpLink,
 }: EventCardProps) => {
   return (
     <div className="bg-nsbe-gray-50 flex w-full max-w-4xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row">
@@ -51,7 +53,7 @@ const EventCard = ({
         <div className="mt-3 flex justify-end">
           <Link
             className="rounded border border-white px-6 py-1 text-xs"
-            href={"/"}
+            href={rsvpLink}
           >
             RSVP
           </Link>
@@ -72,6 +74,7 @@ const UpcomingEvents = () => {
       location: "Location",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing alexs. Quisque faucibus ex sapien vitae pellentesque sem placerat. (Event Description)",
+      rsvpLink: "/",
     },
   ];
 
