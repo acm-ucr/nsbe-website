@@ -1,77 +1,89 @@
-import { FiClock, FiMapPin } from "react-icons/fi";
+import { BsClock } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
 
-interface EventItem {
-  month: string;
+interface EventCardProps {
   day: string;
-  name: string;
-  time: string;
+  date: string;
+  title: string;
+  startTime: string;
+  endTime: string;
   location: string;
   description: string;
+  rsvpLink: string;
 }
 
-const events: EventItem[] = [
-  {
-    month: "MONTH",
-    day: "00",
-    name: "EVENT NAME",
-    time: "00:00-00:00 AM/PM",
-    location: "Location",
-    description: "Description",
-  },
-  {
-    month: "MONTH",
-    day: "00",
-    name: "EVENT NAME",
-    time: "00:00-00:00 AM/PM",
-    location: "Location",
-    description: "Description",
-  },
-];
-
-const EventCard = ({ event }: { event: EventItem }) => {
+const EventCard = ({
+  day,
+  date,
+  title,
+  startTime,
+  endTime,
+  location,
+  description,
+  rsvpLink,
+}: EventCardProps) => {
   return (
-    <div className="bg-nsbe-gray-50 flex flex-col gap-4 rounded-lg p-5 shadow-xl">
-      <div className="flex gap-4">
-        <div className="flex flex-col items-center justify-center rounded-md border border-white/40 px-4 py-2 text-white">
-          <span className="text-sm tracking-wide">{event.month}</span>
-          <span className="text-3xl font-bold">{event.day}</span>
-        </div>
-
-        <div className="flex flex-col justify-center gap-1 text-white">
-          <h3 className="text-lg font-semibold">{event.name}</h3>
-          <div className="flex items-center gap-2 text-sm text-white/80">
-            <FiClock className="h-4 w-4 shrink-0" />
-            <span>{event.time}</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-white/80">
-            <FiMapPin className="h-4 w-4 shrink-0" />
-            <span>{event.location}</span>
-          </div>
+    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-10/12 overflow-hidden rounded-md border text-white">
+      <div className="border-nsbe-gray-50 flex items-center justify-center border-r px-3 py-2">
+        <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-5">
+          <span className="text-xs tracking-widest">{day}</span>
+          <span className="mt-1 text-4xl">{date}</span>
         </div>
       </div>
-      <p className="text-sm text-white/70">{event.description}</p>
-      <button className="mt-auto self-end rounded-md border border-white/40 px-6 py-1.5 text-sm text-white transition-colors hover:bg-white/10">
-        RSVP
-      </button>
+
+      <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
+        <p className="text-base tracking-wide">{title}</p>
+        <p className="flex items-center gap-1 text-xs">
+          <BsClock className="shrink-0" />
+          {startTime} - {endTime}
+        </p>
+        <p className="flex items-center gap-1 text-xs">
+          <MdLocationOn className="shrink-0" />
+          {location}
+        </p>
+      </div>
+
+      <div className="bg-nsbe-gray-100 my-3 w-px" />
+
+      <div className="flex w-1/2 flex-col justify-between px-5 py-4">
+        <p className="text-sm leading-relaxed">{description}</p>
+        <div className="mt-3 flex justify-end">
+          <a
+            href={rsvpLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded border border-white px-6 py-1 text-xs"
+          >
+            RSVP
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
 
 const UpcomingEvents = () => {
-  return (
-    <section className="flex flex-col items-center px-4 py-12 sm:px-6 lg:px-8">
-      <h2 className="text-nsbe-yellow-100 mb-8 text-center text-3xl font-extrabold tracking-wide sm:text-4xl">
-        UPCOMING EVENTS
-      </h2>
+  const events: EventCardProps[] = [
+    {
+      day: "MONTH",
+      date: "00",
+      title: "Event Name",
+      startTime: "00:00 AM/PM",
+      endTime: "00:00 AM/PM",
+      location: "Location",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipiscing alexs. Quisque faucibus ex sapien vitae pellentesque sem placerat. (Event Description)",
+      rsvpLink: "https://example.com/rsvp",
+    },
+  ];
 
-      <div className="bg-nsbe-gray-100 w-full max-w-4xl rounded-xl p-6 shadow-2xl sm:p-8">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {events.map((event, index) => (
-            <EventCard key={index} event={event} />
-          ))}
-        </div>
-      </div>
-    </section>
+  return (
+    <div className="flex flex-col items-center gap-4 p-6">
+      {events.map((event, index) => (
+        <EventCard key={index} {...event} />
+      ))}
+    </div>
   );
 };
+
 export default UpcomingEvents;
