@@ -23,11 +23,11 @@ const EventCard = ({
   rsvpLink,
 }: EventCardProps) => {
   return (
-    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-10/12 overflow-hidden rounded-md border text-white">
-      <div className="border-nsbe-gray-50 flex items-center justify-center border-r px-3 py-2">
-        <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-5">
+    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-full max-w-4xl flex-col overflow-hidden rounded-md border text-white sm:w-11/12 md:w-10/12 md:flex-row">
+      <div className="border-nsbe-gray-50 flex items-center justify-center border-b px-3 py-3 md:border-b-0 md:border-r md:py-2">
+        <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-4 md:py-5">
           <span className="text-xs tracking-widest">{day}</span>
-          <span className="mt-1 text-4xl">{date}</span>
+          <span className="mt-1 text-3xl md:text-4xl">{date}</span>
         </div>
       </div>
 
@@ -43,9 +43,9 @@ const EventCard = ({
         </p>
       </div>
 
-      <div className="bg-nsbe-gray-100 my-3 w-px" />
+      <div className="bg-nsbe-gray-100 mx-5 h-px md:mx-0 md:my-3 md:h-auto md:w-px" />
 
-      <div className="flex w-1/2 flex-col justify-between px-5 py-4">
+      <div className="flex flex-col justify-between px-5 py-4 md:w-1/2">
         <p className="text-sm leading-relaxed">{description}</p>
         <div className="mt-3 flex justify-end">
           <a
