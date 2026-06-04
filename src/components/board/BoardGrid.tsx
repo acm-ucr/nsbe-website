@@ -3,11 +3,11 @@ import board from "@/data/board";
 
 const BoardGrid = () => {
   return (
-    <div className="flex flex-col items-center gap-4 px-2 py-16 pb-32 md:px-6">
-      <p className="text-nsbe-yellow-100 text-center text-5xl font-extrabold">
+    <div className="flex flex-col items-center gap-4 px-2 py-16 md:px-6">
+      <p className="text-nsbe-yellow-100 text-center text-3xl font-extrabold md:text-5xl">
         MEET THE BOARD
       </p>
-      <p className="text-nsbe-yellow-100 mb-10 text-center text-3xl font-extrabold">
+      <p className="text-nsbe-yellow-100 mb-10 text-center text-xl font-extrabold md:text-3xl">
         2026 - 2027
       </p>
       <div className="grid w-full grid-cols-1 justify-items-center gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-30">
