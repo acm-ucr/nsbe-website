@@ -9,7 +9,6 @@ interface EventCardProps {
   endTime: string;
   location: string;
   description: string;
-  rsvpLink: string;
 }
 
 const EventCard = ({
@@ -20,42 +19,38 @@ const EventCard = ({
   endTime,
   location,
   description,
-  rsvpLink,
 }: EventCardProps) => {
   return (
     <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-full max-w-4xl flex-col overflow-hidden rounded-md border text-white sm:w-11/12 md:w-10/12 md:flex-row">
-      <div className="border-nsbe-gray-50 flex items-center justify-center border-b px-3 py-3 md:border-b-0 md:border-r md:py-2">
-        <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-4 md:py-5">
-          <span className="text-xs tracking-widest">{day}</span>
-          <span className="mt-1 text-3xl md:text-4xl">{date}</span>
+      <div className="flex md:contents">
+        <div className="border-nsbe-gray-50 flex items-center justify-center px-3 py-3 md:border-r md:py-2">
+          <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-4 md:py-5">
+            <div className="text-xs tracking-widest">{day}</div>
+            <div className="mt-1 text-3xl md:text-4xl">{date}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
-        <p className="text-base tracking-wide">{title}</p>
-        <p className="flex items-center gap-1 text-xs">
-          <BsClock className="shrink-0" />
-          {startTime} - {endTime}
-        </p>
-        <p className="flex items-center gap-1 text-xs">
-          <MdLocationOn className="shrink-0" />
-          {location}
-        </p>
+        <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
+          <div className="text-base tracking-wide">{title}</div>
+          <div className="flex items-center gap-1 text-xs">
+            <BsClock className="shrink-0" />
+            {startTime} - {endTime}
+          </div>
+          <div className="flex items-center gap-1 text-xs">
+            <MdLocationOn className="shrink-0" />
+            {location}
+          </div>
+        </div>
       </div>
 
       <div className="bg-nsbe-gray-100 mx-5 h-px md:mx-0 md:my-3 md:h-auto md:w-px" />
 
       <div className="flex flex-col justify-between px-5 py-4 md:w-1/2">
-        <p className="text-sm leading-relaxed">{description}</p>
+        <div className="text-sm leading-relaxed">{description}</div>
         <div className="mt-3 flex justify-end">
-          <a
-            href={rsvpLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded border border-white px-6 py-1 text-xs"
-          >
+          <div className="rounded border border-white px-6 py-1 text-xs">
             RSVP
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +68,6 @@ const UpcomingEvents = () => {
       location: "Location",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing alexs. Quisque faucibus ex sapien vitae pellentesque sem placerat. (Event Description)",
-      rsvpLink: "https://example.com/rsvp",
     },
   ];
 
