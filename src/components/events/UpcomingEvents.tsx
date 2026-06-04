@@ -79,6 +79,9 @@ const UpcomingEvents = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 p-6">
+      <div className="text-nsbe-yellow-100 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl">
+        UPCOMING EVENTS
+      </div>
       {events.map((event, index) => (
         <EventCard key={index} {...event} />
       ))}
