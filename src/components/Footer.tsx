@@ -3,16 +3,24 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-nsbe-yellow-100 bg-nsbe-gray-50 flex flex-col items-center gap-4 border-t-4 px-8 py-6 text-center md:flex-row md:justify-between md:py-8 md:text-left">
-      <div className="text-nsbe-yellow-100 font-medium">
-        UCR National Society of Black Engineers
-      </div>
-      <div className="flex gap-4">
-        {footerData.map(({ icon: Icon, url }, index) => (
-          <Link key={index} href={url} target="_blank">
-            <Icon className="text-nsbe-yellow-100 text-3xl" />
-          </Link>
-        ))}
+    <footer className="border-nsbe-yellow-100 bg-nsbe-gray-50 w-full border-t-4 px-4 py-6 sm:px-8">
+      <div className="flex w-full items-center justify-between">
+        <div className="text-nsbe-yellow-100 text-lg font-medium tracking-wide sm:text-xl">
+          UCR NSBE
+        </div>
+
+        <div className="flex items-center gap-5 sm:gap-6">
+          {footerData.map(({ icon: Icon, url }, index) => (
+            <Link
+              key={index}
+              href={url}
+              target="_blank"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Icon className="text-nsbe-yellow-100 text-2xl sm:text-3xl" />
+            </Link>
+          ))}
+        </div>
       </div>
     </footer>
   );

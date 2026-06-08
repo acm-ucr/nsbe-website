@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { MdEmail } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 
 interface FooterLink {
@@ -9,7 +9,7 @@ interface FooterLink {
 
 export const footerData: FooterLink[] = [
   {
-    icon: MdEmail,
+    icon: MdOutlineEmail,
     url: "mailto:nsbe@ucr.edu",
   },
   {
