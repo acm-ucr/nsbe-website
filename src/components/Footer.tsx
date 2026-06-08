@@ -11,12 +11,7 @@ const Footer = () => {
 
         <div className="flex items-center gap-5 sm:gap-6">
           {footerData.map(({ icon: Icon, url }, index) => (
-            <Link
-              key={index}
-              href={url}
-              target="_blank"
-              className="transition-opacity hover:opacity-80"
-            >
+            <Link key={index} href={url} target="_blank">
               <Icon className="text-nsbe-yellow-100 text-2xl sm:text-3xl" />
             </Link>
           ))}
