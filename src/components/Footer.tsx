@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className="border-nsbe-yellow-100 bg-nsbe-gray-50 w-full border-t-4 px-4 py-6 sm:px-8">
       <div className="flex w-full items-center justify-between">
         <div className="text-nsbe-yellow-100 text-lg font-medium tracking-wide sm:text-xl">
-          UCR NSBE
+          <div className="block sm:hidden">UCR NSBE</div>
+          <div className="hidden sm:block">
+            UCR National Society of Black Engineers
+          </div>
         </div>
 
         <div className="flex items-center gap-5 sm:gap-6">
