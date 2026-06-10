@@ -1,5 +1,6 @@
 import { BsClock } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
+import Link from "next/link";
 
 interface EventCardProps {
   day: string;
@@ -23,39 +24,39 @@ const EventCard = ({
   rsvpLink,
 }: EventCardProps) => {
   return (
-    <div className="bg-nsbe-gray-50 border-nsbe-gray-100 flex w-10/12 overflow-hidden rounded-md border text-white">
-      <div className="border-nsbe-gray-50 flex items-center justify-center border-r px-3 py-2">
-        <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded border px-5 py-5">
-          <span className="text-xs tracking-widest">{day}</span>
-          <span className="mt-1 text-4xl">{date}</span>
+    <div className="bg-nsbe-gray-50 flex w-full max-w-4xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row">
+      <div className="flex md:contents">
+        <div className="border-nsbe-gray-50 flex items-center justify-center px-3 py-3 md:border-r md:py-2">
+          <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded-xl border px-5 py-4 md:py-5">
+            <div className="text-xs tracking-widest md:text-base">{day}</div>
+            <div className="mt-1 text-3xl md:text-4xl">{date}</div>
+          </div>
+        </div>
+
+        <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
+          <div className="text-base tracking-wide">{title}</div>
+          <div className="flex items-center gap-1 text-xs md:text-sm">
+            <BsClock className="shrink-0 md:size-5" />
+            {startTime} - {endTime}
+          </div>
+          <div className="flex items-center gap-1 text-xs md:text-sm">
+            <MdLocationOn className="shrink-0 md:size-5" />
+            {location}
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
-        <p className="text-base tracking-wide">{title}</p>
-        <p className="flex items-center gap-1 text-xs">
-          <BsClock className="shrink-0" />
-          {startTime} - {endTime}
-        </p>
-        <p className="flex items-center gap-1 text-xs">
-          <MdLocationOn className="shrink-0" />
-          {location}
-        </p>
-      </div>
+      <div className="bg-nsbe-gray-100 hidden md:mx-0 md:my-3 md:block md:h-auto md:w-px" />
 
-      <div className="bg-nsbe-gray-100 my-3 w-px" />
-
-      <div className="flex w-1/2 flex-col justify-between px-5 py-4">
-        <p className="text-sm leading-relaxed">{description}</p>
+      <div className="flex flex-col justify-between px-5 py-4 md:w-1/2">
+        <div className="text-sm leading-relaxed">{description}</div>
         <div className="mt-3 flex justify-end">
-          <a
-            href={rsvpLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
             className="rounded border border-white px-6 py-1 text-xs"
+            href={rsvpLink}
           >
             RSVP
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -73,15 +74,20 @@ const UpcomingEvents = () => {
       location: "Location",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing alexs. Quisque faucibus ex sapien vitae pellentesque sem placerat. (Event Description)",
-      rsvpLink: "https://example.com/rsvp",
+      rsvpLink: "/",
     },
   ];
 
   return (
-    <div className="flex flex-col items-center gap-4 p-6">
-      {events.map((event, index) => (
-        <EventCard key={index} {...event} />
-      ))}
+    <div className="flex w-full flex-col items-center gap-4 p-6">
+      <div className="text-nsbe-yellow-100 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl">
+        UPCOMING EVENTS
+      </div>
+      <div className="bg-nsbe-gray-100 flex w-full max-w-4xl justify-center rounded-xl border border-white p-6 shadow-2xl">
+        {events.map((event, index) => (
+          <EventCard key={index} {...event} />
+        ))}
+      </div>
     </div>
   );
 };
