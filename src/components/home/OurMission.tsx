@@ -41,14 +41,19 @@ const OurMission = () => {
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, delay: 0.6 },
+        }}
+        whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+        className="mt-12"
       >
         <Link
           href="https://nsbe.org"
           target="_blank"
-          className="border-nsbe-yellow-100 text-nsbe-yellow-100 mt-12 inline-block rounded-xl border-3 px-5 py-2 text-xl transition-opacity hover:opacity-60"
+          className="border-nsbe-yellow-100 text-nsbe-yellow-100 inline-block rounded-xl border-3 px-5 py-2 text-xl"
         >
           LEARN MORE
         </Link>
