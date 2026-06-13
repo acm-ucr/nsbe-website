@@ -22,18 +22,31 @@ const Landing = () => {
         />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-nsbe-yellow-100 relative z-10 px-4 text-center"
-      >
-        <div className="text-8xl font-extrabold">NSBE</div>
-        <p className="mt-2 text-4xl font-bold">
-          National Society of Black Engineers <br /> at UCR
-        </p>
+      <div className="text-nsbe-yellow-100 relative z-10 px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-8xl font-extrabold"
+        >
+          NSBE
+        </motion.div>
 
-        <div className="mt-4 flex justify-center gap-8 text-5xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-2 text-4xl font-bold"
+        >
+          National Society of Black Engineers <br /> at UCR
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="mt-4 flex justify-center gap-8 text-5xl"
+        >
           <a
             href="mailto:ucrnsbepres@gmail.com"
             target="_blank"
@@ -48,8 +61,8 @@ const Landing = () => {
           >
             <FiInstagram />
           </a>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
