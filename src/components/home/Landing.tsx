@@ -1,20 +1,33 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "motion/react";
 import { FiInstagram, FiMail } from "react-icons/fi";
 import homeLanding from "@/public/home/HomeLanding.webp";
 
 const Landing = () => {
   return (
     <div className="border-b-nsbe-yellow-100 relative flex h-[80vh] items-center justify-center overflow-hidden border-b-4">
-      <div className="absolute inset-0">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute inset-0"
+      >
         <Image
           src={homeLanding}
           alt="NSBE UCR Group"
           className="h-full w-full object-cover brightness-50"
         />
-      </div>
+      </motion.div>
 
-      <div className="text-nsbe-yellow-100 relative z-10 px-4 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="text-nsbe-yellow-100 relative z-10 px-4 text-center"
+      >
         <div className="text-8xl font-extrabold">NSBE</div>
         <p className="mt-2 text-4xl font-bold">
           National Society of Black Engineers <br /> at UCR
@@ -36,7 +49,7 @@ const Landing = () => {
             <FiInstagram />
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
