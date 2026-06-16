@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import aboutLanding from "@/public/about/AboutLanding.webp";
+import { motion } from "motion/react";
 
 const Landing = () => {
   return (
@@ -12,9 +15,14 @@ const Landing = () => {
           className="h-full w-full object-cover brightness-50"
         />
       </div>
-      <div className="text-nsbe-yellow-100 relative z-10 px-4 text-center text-6xl font-extrabold">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="text-nsbe-yellow-100 relative z-10 px-4 text-center text-6xl font-extrabold"
+      >
         ABOUT US
-      </div>
+      </motion.div>
     </div>
   );
 };
