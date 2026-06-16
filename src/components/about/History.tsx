@@ -1,10 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Logo from "@/public/Logo.webp";
+import { motion } from "motion/react";
+
+const slamanimation = {
+  hidden: { opacity: 0, scale: 1.8, y: -60 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
+};
 
 const History = () => {
   return (
     <div className="mt-5 mb-5 flex items-center justify-center">
-      <div className="flex w-3/4 flex-col items-center gap-10 md:flex-row">
+      <motion.div
+        className="flex w-3/4 flex-col items-center gap-10 md:flex-row"
+        variants={slamanimation}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ type: "spring", stiffness: 200, damping: 14, mass: 0.8 }}
+      >
         <Image src={Logo} alt="NSBE Logo" className="w-1/2 md:w-full" />
 
         <div className="bg-nsbe-gray-100/50 rounded-md border border-amber-50 p-5">
@@ -22,7 +41,7 @@ const History = () => {
             the university.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

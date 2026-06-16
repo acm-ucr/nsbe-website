@@ -1,5 +1,25 @@
+"use client";
+
 import BoardCard from "@/components/board/BoardCard";
 import board from "@/data/board";
+import { motion } from "motion/react";
+
+const slidedownanimation = {
+  hidden: { opacity: 0, y: -60, scale: 0.85 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+};
+
+const getCardAnimation = (index: number) => ({
+  transition: { duration: 0.6, delay: index * 0.1, ease: "easeOut" as const },
+  viewport: { once: true, amount: 0.3 },
+  initial: "hidden",
+  whileInView: "show",
+  whileHover: { scale: 1.05, transition: { duration: 0.2, delay: 0 } },
+});
 
 const BoardGrid = () => {
   return (
@@ -12,13 +32,18 @@ const BoardGrid = () => {
       </p>
       <div className="grid w-full grid-cols-1 justify-items-center gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-30">
         {board.map(({ image, name, position, linkedin }, index) => (
-          <BoardCard
+          <motion.div
             key={index}
-            image={image}
-            name={name}
-            position={position}
-            linkedin={linkedin}
-          />
+            variants={slidedownanimation}
+            {...getCardAnimation(index)}
+          >
+            <BoardCard
+              image={image}
+              name={name}
+              position={position}
+              linkedin={linkedin}
+            />
+          </motion.div>
         ))}
       </div>
     </div>
