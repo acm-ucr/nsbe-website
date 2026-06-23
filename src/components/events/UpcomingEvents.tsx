@@ -33,7 +33,7 @@ const EventCard = ({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="bg-nsbe-gray-50 flex w-full max-w-4xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row"
+      className="bg-nsbe-gray-50 flex w-full max-w-6xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row"
     >
       <div className="flex md:contents">
         <div className="border-nsbe-gray-50 flex items-center justify-center px-3 py-3 md:border-r md:py-2">
@@ -100,7 +100,7 @@ const UpcomingEvents = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-nsbe-yellow-100 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl"
+        className="text-nsbe-yellow-100 mt-5 mb-5 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl"
       >
         UPCOMING EVENTS
       </motion.div>
@@ -110,7 +110,7 @@ const UpcomingEvents = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="bg-nsbe-gray-100 flex w-full max-w-4xl justify-center rounded-xl border border-white p-6 shadow-2xl"
+        className="bg-nsbe-gray-100 flex w-full max-w-6xl justify-center rounded-xl border border-white p-6 shadow-2xl"
       >
         {events.map((event, index) => (
           <EventCard key={index} {...event} />

@@ -11,7 +11,7 @@ const OurMission = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-nsbe-yellow-100 mb-6 text-2xl font-bold md:text-3xl"
+        className="text-nsbe-yellow-100 mb-6 text-2xl font-bold md:text-4xl"
       >
         OUR MISSION
       </motion.div>

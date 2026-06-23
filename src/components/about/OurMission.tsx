@@ -22,7 +22,7 @@ const OurMission = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ type: "spring", stiffness: 200, damping: 14, mass: 0.8 }}
       >
-        <div className="text-nsbe-yellow-100 mb-6 text-2xl font-bold md:text-3xl">
+        <div className="text-nsbe-yellow-100 mb-6 text-2xl font-bold md:text-4xl">
           OUR MISSION
         </div>
 
