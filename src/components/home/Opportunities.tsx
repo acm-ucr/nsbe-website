@@ -12,7 +12,7 @@ const Opportunities = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-nsbe-yellow-100 mb-10 text-center text-3xl font-bold md:mb-0 md:text-right md:text-4xl"
+          className="text-nsbe-yellow-100 mb-10 text-center text-2xl font-bold md:mb-0 md:text-right md:text-4xl"
         >
           OPPORTUNITIES
         </motion.p>
@@ -28,7 +28,7 @@ const Opportunities = () => {
           >
             <div className="bg-nsbe-red-100 absolute inset-0 translate-x-3 translate-y-3 rounded-2xl md:translate-x-4 md:translate-y-4" />
             <div className="bg-nsbe-gray-50 relative rounded-2xl border p-6 md:p-10">
-              <p className="mb-4 text-2xl font-extrabold text-white md:mb-6 md:text-3xl">
+              <p className="mb-4 text-xl font-extrabold text-white md:mb-6 md:text-3xl">
                 NSBE FALL REGIONAL CONFERENCE
               </p>
               <p className="mb-8 text-base text-gray-400 md:mb-10 md:text-lg">
@@ -57,7 +57,7 @@ const Opportunities = () => {
             <div className="bg-nsbe-green-100 absolute inset-0 translate-x-3 translate-y-3 rounded-2xl md:translate-x-4 md:translate-y-4" />
 
             <div className="bg-nsbe-gray-50 relative flex flex-col rounded-2xl border p-6 md:p-10">
-              <p className="mb-4 text-2xl font-extrabold text-white md:mb-6 md:text-3xl">
+              <p className="mb-4 text-xl font-extrabold text-white md:mb-6 md:text-3xl">
                 NSBE ANNUAL CONVENTION
               </p>
               <p className="mb-8 text-base text-gray-400 md:mb-10 md:text-lg">

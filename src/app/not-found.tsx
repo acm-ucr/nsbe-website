@@ -8,18 +8,8 @@ import gearImg from "@/public/error/Gear.webp";
 const NotFound = () => {
   return (
     <div className="mt-10 flex min-h-screen flex-col items-center justify-center px-4">
-      <div className="relative flex max-w-xs items-center justify-center sm:max-w-md md:max-w-none">
-        <motion.div
-          className="pointer-events-none"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 240,
-            repeat: Infinity,
-            ease: "easeOut",
-          }}
-        >
-          <Image src={gearImg} alt="Gear Image" className="object-contain" />
-        </motion.div>
+      <div className="relative mb-10 flex max-w-xs items-center justify-center sm:max-w-md md:max-w-none">
+        <Image src={gearImg} alt="Gear Image" className="object-contain" />
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -45,7 +35,7 @@ const NotFound = () => {
       >
         <Link
           href="/"
-          className="border-nsbe-yellow-100 text-nsbe-yellow-100 mt-10 mb-10 rounded-xl border-3 px-5 py-3 text-xl transition-opacity hover:opacity-60 sm:mt-16"
+          className="border-nsbe-yellow-100 text-nsbe-yellow-100 mt-16 rounded-xl border-3 px-5 py-3 text-base transition-opacity hover:opacity-60 md:text-xl"
         >
           RETURN HOME
         </Link>

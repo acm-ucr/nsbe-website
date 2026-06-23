@@ -27,7 +27,7 @@ const Landing = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-8xl font-extrabold"
+          className="text-6xl font-extrabold md:text-7xl lg:text-8xl"
         >
           NSBE
         </motion.div>
@@ -36,7 +36,7 @@ const Landing = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-2 text-4xl font-bold"
+          className="mt-2 text-2xl font-bold md:text-3xl lg:text-4xl"
         >
           National Society of Black Engineers <br /> at UCR
         </motion.p>
