@@ -115,7 +115,7 @@ const Calendar = () => {
   });
 
   return (
-    <div className="border-nsbe-yellow-100 bg-nsbe-gray-50 relative m-16 mx-auto w-full max-w-4xl rounded-2xl border-8 p-4 md:p-6">
+    <div className="border-nsbe-yellow-100 bg-nsbe-gray-50 relative m-16 mx-auto w-full max-w-5xl rounded-2xl border-8 p-4 md:p-6">
       <div className="mb-4 flex items-center justify-between text-white">
         <button
           onClick={() => changeMonth(-1)}

@@ -1,5 +1,11 @@
-const UpcomingEvents = () => {
-  return <div>UpcomingEvents</div>;
+import UpcomingEvents from "@/components/events/UpcomingEvents";
+
+const HomeUpcomingEvents = () => {
+  return (
+    <>
+      <UpcomingEvents align="left" />
+    </>
+  );
 };
 
-export default UpcomingEvents;
+export default HomeUpcomingEvents;

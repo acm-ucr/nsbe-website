@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BsClock } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
@@ -31,6 +32,10 @@ interface GoogleCalendarEvent {
   };
 }
 
+interface UpcomingEventsProps {
+  align?: "center" | "left";
+}
+
 const EventCard = ({
   day,
   date,
@@ -42,10 +47,17 @@ const EventCard = ({
   rsvpLink,
 }: EventCardProps) => {
   return (
-    <div className="bg-nsbe-gray-50 flex w-full max-w-4xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      className="bg-nsbe-gray-50 flex w-full max-w-5xl flex-col overflow-hidden rounded-md text-white shadow-[1px_5px_3px_rgba(0,0,0,0.2)] md:flex-row"
+    >
       <div className="flex md:contents">
         <div className="border-nsbe-gray-50 flex items-center justify-center px-3 py-3 md:border-r md:py-2">
-          <div className="border-nsbe-gray-100 flex min-w-[64px] flex-col items-center justify-center rounded-xl border px-5 py-4 md:py-5">
+          <div className="border-nsbe-gray-100 flex flex-col items-center justify-center rounded-xl border px-5 py-4 md:py-5">
             <div className="text-xs tracking-widest md:text-base">{day}</div>
             <div className="mt-1 text-3xl md:text-4xl">{date}</div>
           </div>
@@ -53,10 +65,12 @@ const EventCard = ({
 
         <div className="flex flex-1 flex-col justify-center gap-1 px-5 py-4">
           <div className="text-base tracking-wide">{title}</div>
+
           <div className="flex items-center gap-1 text-xs md:text-sm">
             <BsClock className="shrink-0 md:size-5" />
             {startTime} - {endTime}
           </div>
+
           <div className="flex items-center gap-1 text-xs md:text-sm">
             <MdLocationOn className="shrink-0 md:size-5" />
             {location}
@@ -71,19 +85,21 @@ const EventCard = ({
           {description}
         </div>
         <div className="mt-3 flex justify-end">
-          <Link
-            className="rounded border border-white px-6 py-1 text-xs"
-            href={rsvpLink}
-          >
-            RSVP
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              className="rounded border border-white px-6 py-1 text-xs transition-colors duration-200 hover:bg-white hover:text-black"
+              href={rsvpLink}
+            >
+              RSVP
+            </Link>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({ align = "center" }: UpcomingEventsProps) => {
   const [events, setEvents] = useState<EventCardProps[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -143,12 +159,27 @@ const UpcomingEvents = () => {
     fetchEvents();
   }, []);
 
+  const isLeft = align === "left";
+
   return (
     <div className="my-16 flex w-full flex-col items-center gap-4 p-6">
-      <div className="text-nsbe-yellow-100 mb-5 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className={`text-nsbe-yellow-100 mt-5 mb-5 text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl ${isLeft ? "w-full max-w-5xl text-center md:text-left" : "text-center"}`}
+      >
         UPCOMING EVENTS
-      </div>
-      <div className="bg-nsbe-gray-100 flex w-full max-w-4xl flex-col items-center gap-4 rounded-xl border border-white p-6 shadow-2xl">
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="bg-nsbe-gray-100 flex w-full max-w-5xl flex-col items-center justify-center gap-4 rounded-xl border border-white p-6 shadow-2xl"
+      >
         {loading ? (
           <div className="text-white">Loading events...</div>
         ) : events.length === 0 ? (
@@ -156,7 +187,7 @@ const UpcomingEvents = () => {
         ) : (
           events.map((event, index) => <EventCard key={index} {...event} />)
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
