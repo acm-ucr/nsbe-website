@@ -38,7 +38,8 @@ const Opportunities = () => {
               </p>
               <div>
                 <Link
-                  href="#"
+                  href="https://nsbe.org/events/"
+                  target="_blank"
                   className="inline-block rounded-lg border-2 border-white px-6 py-2 font-bold text-white hover:bg-white hover:text-black md:px-8"
                 >
                   LEARN MORE
@@ -69,7 +70,8 @@ const Opportunities = () => {
               </p>
               <div className="md:self-end">
                 <Link
-                  href="#"
+                  href="https://convention.nsbe.org/"
+                  target="_blank"
                   className="inline-block rounded-lg border-2 border-white px-6 py-2 font-extrabold text-white hover:bg-white hover:text-black md:px-8"
                 >
                   LEARN MORE
