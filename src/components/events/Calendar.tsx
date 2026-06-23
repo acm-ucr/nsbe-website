@@ -1,24 +1,35 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Clock, MapPin, X } from "lucide-react";
-import { events, type EventItem } from "@/data/events";
+
+interface EventItem {
+  id: string;
+  name: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+  rsvpUrl: string;
+}
+
+interface GoogleCalendarEvent {
+  id: string;
+  summary?: string;
+  location?: string;
+  htmlLink?: string;
+  start: { dateTime?: string; date?: string };
+  end: { dateTime?: string; date?: string };
+}
 
 const WEEKDAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const toKey = (date: Date) =>
   `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
-const eventsByDate = events.reduce<Record<string, EventItem[]>>(
-  (acc, event) => {
-    (acc[event.date] ||= []).push(event);
-    return acc;
-  },
-  {},
-);
-
 const Calendar = () => {
   const today = new Date();
+  const [events, setEvents] = useState<EventItem[]>([]);
   const [view, setView] = useState({
     year: today.getFullYear(),
     month: today.getMonth(),
@@ -26,6 +37,60 @@ const Calendar = () => {
   const [selected, setSelected] = useState<EventItem | null>(null);
 
   const { year, month } = view;
+
+  useEffect(() => {
+    const fetchCalendarEvents = async () => {
+      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
+      const calendarId = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL;
+
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&singleEvents=true&maxResults=250`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!data.items) return;
+
+        const formatted: EventItem[] = data.items.map(
+          (event: GoogleCalendarEvent) => {
+            const start = new Date(
+              event.start.dateTime || event.start.date || "",
+            );
+            const end = new Date(event.end.dateTime || event.end.date || "");
+
+            return {
+              id: event.id,
+              name: event.summary || "Untitled Event",
+              date: toKey(start),
+              startTime: start.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              endTime: end.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              location: event.location || "TBD",
+              rsvpUrl: event.htmlLink || "/",
+            };
+          },
+        );
+
+        setEvents(formatted);
+      } catch (err) {
+        console.error("Error fetching events for main grid layout:", err);
+      }
+    };
+
+    fetchCalendarEvents();
+  }, []);
+
+  const eventsByDate = useMemo(() => {
+    return events.reduce<Record<string, EventItem[]>>((acc, event) => {
+      (acc[event.date] ||= []).push(event);
+      return acc;
+    }, {});
+  }, [events]);
 
   const cells = useMemo(() => {
     const firstWeekday = new Date(year, month, 1).getDay();
@@ -50,7 +115,7 @@ const Calendar = () => {
   });
 
   return (
-    <div className="border-nsbe-yellow-100 bg-nsbe-gray-50 relative mx-auto w-full max-w-3xl rounded-2xl border-4 p-4 md:p-6">
+    <div className="border-nsbe-yellow-100 bg-nsbe-gray-50 relative m-16 mx-auto w-full max-w-4xl rounded-2xl border-8 p-4 md:p-6">
       <div className="mb-4 flex items-center justify-between text-white">
         <button
           onClick={() => changeMonth(-1)}
@@ -111,7 +176,7 @@ const Calendar = () => {
       </div>
 
       {selected && (
-        <div className="bg-nsbe-yellow-100 text-nsbe-gray-50 absolute top-1/2 left-1/2 w-72 max-w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-lg p-4 shadow-xl">
+        <div className="bg-nsbe-yellow-100 text-nsbe-gray-50 absolute top-1/2 left-1/2 z-10 w-72 max-w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-lg p-4 shadow-xl">
           <div className="flex items-start justify-between">
             <h4 className="font-bold">{selected.name}</h4>
             <button
@@ -134,6 +199,8 @@ const Calendar = () => {
           </div>
           <a
             href={selected.rsvpUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="border-nsbe-gray-50 hover:bg-nsbe-gray-50 mt-3 inline-block rounded border px-4 py-1 text-sm transition-colors hover:text-white"
           >
             RSVP
