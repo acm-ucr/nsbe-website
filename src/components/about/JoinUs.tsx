@@ -21,10 +21,10 @@ const JoinUs = () => {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="text-nsbe-yellow-100 mb-8 text-4xl font-bold">
+      <div className="text-nsbe-yellow-100 mb-8 text-2xl font-bold md:text-4xl">
         JOIN US
       </div>
-      <p className="text-xl text-white">
+      <p className="text-lg text-white md:text-xl">
         Join us on{" "}
         <Link
           href="https://highlanderlink.ucr.edu/organization/nsbe"

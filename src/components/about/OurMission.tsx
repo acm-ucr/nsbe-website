@@ -22,16 +22,16 @@ const OurMission = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ type: "spring", stiffness: 200, damping: 14, mass: 0.8 }}
       >
-        <div className="text-nsbe-yellow-100 mb-6 text-3xl font-bold">
+        <div className="text-nsbe-yellow-100 mb-6 text-2xl font-bold md:text-3xl">
           OUR MISSION
         </div>
 
-        <p className="text-nsbe-yellow-100 max-w-4xl text-xl">
+        <p className="text-nsbe-yellow-100 max-w-4xl text-lg md:text-xl">
           As the organization has grown, advancing the professional prospects
           and development of Black engineers, our purpose has remained the same.
         </p>
 
-        <p className="text-nsbe-yellow-100 max-w-4xl text-xl">
+        <p className="text-nsbe-yellow-100 max-w-4xl text-lg md:text-xl">
           We aim "to increase the number of culturally responsible Black
           Engineers who excel academically, succeed professionally, and
           positively impact the community".

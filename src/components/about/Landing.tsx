@@ -19,7 +19,7 @@ const Landing = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="text-nsbe-yellow-100 relative z-10 px-4 text-center text-6xl font-extrabold"
+        className="text-nsbe-yellow-100 relative z-10 px-4 text-center text-6xl font-extrabold md:text-7xl lg:text-8xl"
       >
         ABOUT US
       </motion.div>
