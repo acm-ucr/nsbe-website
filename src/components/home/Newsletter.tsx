@@ -45,7 +45,6 @@ const Newsletter = () => {
         {newsletterInfos.map(({ name, image }, index) => (
           <motion.div
             key={index}
-            className="w-full sm:w-[32%]"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
