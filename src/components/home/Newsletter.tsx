@@ -2,13 +2,15 @@
 
 import { motion } from "framer-motion";
 import NewsletterCard from "./NewsletterCard";
-import placeholder from "@/public/home/placeholder.webp";
 import Link from "next/link";
+import BNGO from "@/public/home/BNGO.webp";
+import Nationals from "@/public/home/Nationals.webp";
+import BCOEGala from "@/public/home/BCOEGala.webp";
 
 const newsletterInfos = [
-  { name: "Resource Name", image: placeholder },
-  { name: "Resource Name", image: placeholder },
-  { name: "Resource Name", image: placeholder },
+  { name: "NSBE National Convention March 2026", image: Nationals },
+  { name: "Bourns Next Generation Outreach May 2026", image: BNGO },
+  { name: "BCOE Gala June 2026", image: BCOEGala },
 ];
 
 const Newsletter = () => {
@@ -64,7 +66,7 @@ const Newsletter = () => {
         transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
       >
         <Link
-          href="https://nsbe.org/download-type/newsletter/"
+          href="http://eepurl.com/i1C3v6"
           target="_blank"
           className="border-nsbe-yellow-100 text-nsbe-yellow-100 inline-block rounded-xl border-3 px-5 py-2 text-base md:text-xl"
         >
