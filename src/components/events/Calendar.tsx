@@ -43,33 +43,46 @@ const Calendar = () => {
       const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
       const calendarId = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL;
 
-      const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&singleEvents=true&maxResults=250`;
+      const startOfMonth = new Date(year, month, 1).toISOString();
+      const endOfMonth = new Date(year, month + 1, 0, 23, 59, 59).toISOString();
+
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${startOfMonth}&timeMax=${endOfMonth}&singleEvents=true&orderBy=startTime&maxResults=250`;
 
       try {
         const response = await fetch(url);
         const data = await response.json();
 
-        if (!data.items) return;
+        if (!data.items) {
+          setEvents([]);
+          return;
+        }
 
         const formatted: EventItem[] = data.items.map(
           (event: GoogleCalendarEvent) => {
-            const start = new Date(
-              event.start.dateTime || event.start.date || "",
-            );
-            const end = new Date(event.end.dateTime || event.end.date || "");
+            const rawStart = event.start.dateTime || event.start.date || "";
+            const rawEnd = event.end.dateTime || event.end.date || "";
+
+            const start = new Date(rawStart);
+            const end = new Date(rawEnd);
+
+            const dateKey = event.start.date ? event.start.date : toKey(start);
 
             return {
               id: event.id,
               name: event.summary || "Untitled Event",
-              date: toKey(start),
-              startTime: start.toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-              }),
-              endTime: end.toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-              }),
+              date: dateKey,
+              startTime: event.start.date
+                ? "All-day"
+                : start.toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }),
+              endTime: event.end.date
+                ? "All-day"
+                : end.toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }),
               location: event.location || "TBD",
               rsvpUrl: event.htmlLink || "/",
             };
@@ -83,7 +96,7 @@ const Calendar = () => {
     };
 
     fetchCalendarEvents();
-  }, []);
+  }, [year, month]);
 
   const eventsByDate = useMemo(() => {
     return events.reduce<Record<string, EventItem[]>>((acc, event) => {
